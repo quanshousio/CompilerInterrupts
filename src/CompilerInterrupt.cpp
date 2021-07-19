@@ -3791,7 +3791,7 @@ struct CompilerInterrupt : public ModulePass {
     uint32_t numeratorBP = bp.getNumerator();
     uint32_t denominatorBP = bp.getDenominator();
     double edgeProb = (double)numeratorBP / denominatorBP;
-    double directEdgeProb = (edgeProb * numEdges);
+    double directEdgeProb = edgeProb;
 
 #ifdef DBG_DETAILED
     errs() << "Edge probability between " << start->getName() << " and "
@@ -11391,7 +11391,6 @@ bool isFuncPointer(Function *F) {
           << InstGranularity << ")!\n";
       exit(1);
     }
-    << "\n";
 #endif
 
 #if 0
